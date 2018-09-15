@@ -9,3 +9,19 @@ services:
       dockerfile: Dockerfile.e2e
     volumes:
       - ./dashboard-client-v1:/dashboard-client-e2e
+    environment:
+      CYPRESS_TARGET_HOST: localhost
+      CYPRESS_TARGET_PORT: 4321
+################################################################################
+# Dashboard Client
+################################################################################
+  dashboard-client:
+    build:
+      context: ./dashboard-client-v1
+      dockerfile: Dockerfile
+    volumes:
+      - ./dashboard-client-v1:/dashboard-client
+    environment:
+      HOST: localhost
+      PORT: "4321"
+    command: yarn serve
