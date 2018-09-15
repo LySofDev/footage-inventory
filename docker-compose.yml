@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+################################################################################
+# Dashboard Client e2e tests
+################################################################################
+  dashboard-client-e2e:
+    build:
+      context: ./dashboard-client-v1
+      dockerfile: Dockerfile.e2e
+    volumes:
+      - ./dashboard-client-v1:/dashboard-client-e2e
