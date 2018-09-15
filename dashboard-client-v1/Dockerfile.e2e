@@ -1,5 +1,5 @@
 FROM cypress/browsers:chrome67
+RUN yarn global add cypress
 RUN mkdir /dashboard-client-e2e
-COPY . /dashboard-client-e2e/
+COPY cypress.json cypress /dashboard-client-e2e/
 WORKDIR /dashboard-client-e2e
-RUN yarn
