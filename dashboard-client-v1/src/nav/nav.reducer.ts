@@ -6,7 +6,7 @@ export interface NavState {
 }
 
 const initialState: NavState = {
-  title: "Initial Brand",
+  title: "footage-catalogue",
   visible: true
 };
 

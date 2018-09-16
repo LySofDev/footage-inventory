@@ -9,7 +9,7 @@ interface NavLayoutProps {
 }
 
 export default (props: NavLayoutProps) => (
-  <NavBar visible={props.visible}>
+  <NavBar visible={props.visible} className="brand">
     <Brand>
       <FontAwesomeIcon icon={faAtom} color="white" size="2x" />
     </Brand>
