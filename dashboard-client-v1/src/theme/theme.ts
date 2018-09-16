@@ -6,11 +6,6 @@ export interface BoxShadows {
   highest: string;
 }
 
-export interface Font {
-  size: string;
-  family: string;
-}
-
 export interface Colors {
   primary: string;
   accent: string;
@@ -18,9 +13,20 @@ export interface Colors {
   background: string;
 }
 
+export interface Devices {
+  tablet: number;
+  desktop: number;
+}
+
+export interface Font {
+  size: string;
+  family: string;
+}
+
 export interface Theme {
   boxShadows: BoxShadows;
   colors: Colors;
+  devices: Devices;
   font: Font;
   inverted: boolean;
 }
