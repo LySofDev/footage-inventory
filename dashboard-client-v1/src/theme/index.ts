@@ -18,6 +18,10 @@ export const theme: Theme = {
     primary: "#be3e2b", // Dark Orange
     warn: "#ed8a45", // Light Orange
   },
+  devices: {
+    tablet: 850,
+    desktop: 1281
+  },
   font: {
     family: "sans-serif",
     size: "14px"
