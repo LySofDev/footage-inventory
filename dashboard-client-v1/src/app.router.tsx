@@ -5,10 +5,12 @@ import { AppLayout } from './app.layout';
 import { default as history } from './history';
 import { default as Home } from './home';
 import { Videos } from './videos';
+import { Clips } from './clips';
 import { default as store } from './store';
 
-const HomeComponent = () => (<Home />);
-const VideosComponent = () => (<Videos />);
+const HomePage = () => (<Home />);
+const VideosPage = () => (<Videos />);
+const ClipsPage = () => (<Clips />);
 
 export class AppRouter extends React.PureComponent {
   public render() {
@@ -16,9 +18,10 @@ export class AppRouter extends React.PureComponent {
       <Provider store={store}>
         <Router history={history}>
           <AppLayout>
-            <Route path="/" exact={true} render={HomeComponent} />
-            <Route path="/dashboard" render={VideosComponent} />
-            <Route path="/videos" render={VideosComponent} />
+            <Route path="/" exact={true} render={HomePage} />
+            <Route path="/dashboard" render={VideosPage} />
+            <Route path="/videos" render={VideosPage} />
+            <Route path="/clips" render={ClipsPage} />
           </AppLayout>
         </Router>
       </Provider>
