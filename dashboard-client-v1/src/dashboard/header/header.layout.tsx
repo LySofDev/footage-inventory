@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { Header } from './header.styles';
+import { Header, Title } from './header.styles';
 
 interface HeaderLayoutProps {
   title: string;
 }
 
 export const HeaderLayout = (props: HeaderLayoutProps) => (
-  <Header>{props.title}</Header>
+  <Header>
+    <Title>{props.title}</Title>
+  </Header>
 );
