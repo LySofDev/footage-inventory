@@ -17,13 +17,6 @@ export const Content = styled.article`
   overflow-y: scroll;
 `
 
-export const Header = styled.header`
-  height: 6rem;
-  width: 100%;
-  padding: 1.5rem 1rem;
-  background: lightgray;
-`
-
 export const Main = styled.main`
   margin: 1.5rem 1rem;
 `
