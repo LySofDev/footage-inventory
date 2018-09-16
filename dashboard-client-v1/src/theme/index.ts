@@ -19,8 +19,8 @@ export const theme: Theme = {
     warn: "#ed8a45", // Light Orange
   },
   devices: {
-    tablet: 850,
-    desktop: 1281
+    desktop: 1281,
+    tablet: 850
   },
   font: {
     family: "sans-serif",
