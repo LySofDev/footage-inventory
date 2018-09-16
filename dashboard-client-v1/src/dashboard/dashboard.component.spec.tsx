@@ -29,4 +29,14 @@ describe('Given a Dashboard Component', () => {
 
   });
 
+  describe('When mounted with a title prop', () => {
+
+    it('will show the title in the header', () => {
+      const testTitle = "Hello, Title!";
+      fixture = mount(<Dashboard title={testTitle} />);
+      expect(fixture.contains(testTitle)).toBe(true);
+    });
+
+  });
+
 });

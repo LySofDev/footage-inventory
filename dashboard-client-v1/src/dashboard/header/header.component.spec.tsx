@@ -16,8 +16,18 @@ describe('Given a Header component', () => {
     });
 
     it('contains the word Dashboard', () => {
-      let state: any = component.state();
+      const state: any = component.state();
       expect(state.title).toEqual('Dashboard');
+    });
+
+  });
+
+  describe('When mounted with a title prop', () => {
+
+    it('contains the title', () => {
+      const testTitle = "Hello, Title!";
+      component = mount(<Header title={testTitle} />);
+      expect(component.contains(testTitle)).toBe(true);
     });
 
   });

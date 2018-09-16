@@ -7,9 +7,9 @@ describe('Given a dashboard page', () => {
       cy.get('.brand').contains('footage-catalogue');
     });
 
-    it('displays the word Dashboard', () => {
+    it('displays the word Videos', () => {
       cy.visit(`http://localhost:3000/dashboard`);
-      cy.contains('Dashboard');
+      cy.contains('Videos');
     });
   });
 });

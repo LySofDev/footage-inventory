@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { DashboardLayout } from './dashboard.layout';
 
-export class DashboardComponent extends React.Component<{}, {}> {
+interface DashboardComponentProps {
+  title?: string;
+}
+
+export class DashboardComponent extends React.Component<DashboardComponentProps, {}> {
   public render() {
     return (
-      <DashboardLayout>{this.props.children}</DashboardLayout>
+      <DashboardLayout title={this.props.title}>{this.props.children}</DashboardLayout>
     );
   }
 }

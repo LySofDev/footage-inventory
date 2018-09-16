@@ -5,6 +5,7 @@ import { Container, Content, Main } from './dashboard.styles';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
+  title?: string;
 }
 
 export const DashboardLayout = (props: DashboardLayoutProps) => (
@@ -13,9 +14,7 @@ export const DashboardLayout = (props: DashboardLayoutProps) => (
       SideBar
     </SideBar>
     <Content>
-      <Header>
-        Dashboard
-      </Header>
+      <Header title={props.title} />
       <Main>
         {props.children}
       </Main>
