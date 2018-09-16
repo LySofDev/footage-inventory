@@ -3,7 +3,11 @@ import { SideBar } from './side-bar';
 import { Header } from './header';
 import { Container, Content, Main } from './dashboard.styles';
 
-export const DashboardLayout = () => (
+interface DashboardLayoutProps {
+  children: React.ReactNode;
+}
+
+export const DashboardLayout = (props: DashboardLayoutProps) => (
   <Container>
     <SideBar>
       SideBar
@@ -13,7 +17,7 @@ export const DashboardLayout = () => (
         Dashboard
       </Header>
       <Main>
-        Main
+        {props.children}
       </Main>
     </Content>
   </Container>

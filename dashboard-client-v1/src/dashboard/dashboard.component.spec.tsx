@@ -14,5 +14,19 @@ describe('Given a Dashboard Component', () => {
     });
 
   });
-  
+
+  describe('When mounted with children', () => {
+
+    it('will render the children within the layout', () => {
+      fixture = mount(
+        <Dashboard>
+          <h1>Child 1</h1>
+          <h1>Child 2</h1>
+        </Dashboard>
+      );
+      expect(fixture.find('h1').length).toEqual(2);
+    });
+
+  });
+
 });

@@ -3,6 +3,8 @@ import { DashboardLayout } from './dashboard.layout';
 
 export class DashboardComponent extends React.Component<{}, {}> {
   public render() {
-    return (<DashboardLayout />);
+    return (
+      <DashboardLayout>{this.props.children}</DashboardLayout>
+    );
   }
 }
