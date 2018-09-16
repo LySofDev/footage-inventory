@@ -4,11 +4,11 @@ import { Route, Router } from 'react-router';
 import { AppLayout } from './app.layout';
 import { default as history } from './history';
 import { default as Home } from './home';
-import { Dashboard } from './dashboard';
+import { Videos } from './videos';
 import { default as store } from './store';
 
 const HomeComponent = () => (<Home />);
-const DashboardComponent = () => (<Dashboard />);
+const VideosComponent = () => (<Videos />);
 
 export class AppRouter extends React.PureComponent {
   public render() {
@@ -17,7 +17,8 @@ export class AppRouter extends React.PureComponent {
         <Router history={history}>
           <AppLayout>
             <Route path="/" exact={true} render={HomeComponent} />
-            <Route path="/dashboard" render={DashboardComponent} />
+            <Route path="/dashboard" render={VideosComponent} />
+            <Route path="/videos" render={VideosComponent} />
           </AppLayout>
         </Router>
       </Provider>
