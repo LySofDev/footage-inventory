@@ -1,10 +1,9 @@
 describe('Given a landing page', () => {
-  const HOST = Cypress.env('TARGET_HOST');
-  const PORT = Cypress.env('TARGET_PORt');
+  const API_URL = (endpoint: string) => `http://localhost:3000/${endpoint}`;
 
   describe('when a user visits the landing page', () => {
     it('displays the project name', () => {
-      cy.visit(`http://${HOST}:${PORT}/`);
+      cy.visit(API_URL());
       cy.get('.brand').contains('footage-catalogue');
     });
   });

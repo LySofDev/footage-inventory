@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { mount, ReactWrapper } from 'enzyme';
 import * as Cookies from 'js-cookie';
-import { SetCookie } from './set-cookie.component';
+import { SetCookieComponent as SetCookie } from './set-cookie.component';
 
 describe('SetCookie', () => {
   let wrapper: ReactWrapper;
