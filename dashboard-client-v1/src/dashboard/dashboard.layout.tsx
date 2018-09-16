@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Container, Content, SideBar, Header, Main } from './dashboard.styles';
+import { SideBar } from './side-bar';
+import { Container, Content, Header, Main } from './dashboard.styles';
 
 export const DashboardLayout = () => (
   <Container>

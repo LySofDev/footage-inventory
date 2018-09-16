@@ -1,5 +1,5 @@
 import { default as styled } from '../styled-components';
-import { theme } from '../theme';
+// import { theme } from '../theme';
 
 export const Container = styled.section`
   position: absolute;
@@ -17,16 +17,11 @@ export const Content = styled.article`
   overflow-y: scroll;
 `
 
-export const SideBar = styled.aside`
-  width: 20%;
-  background: ${theme.colors.background};
-  padding: 1.5rem 1rem;
-`
-
 export const Header = styled.header`
   height: 6rem;
   width: 100%;
-  margin: 1.5rem 1rem;
+  padding: 1.5rem 1rem;
+  background: lightgray;
 `
 
 export const Main = styled.main`
