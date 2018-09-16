@@ -4,9 +4,11 @@ import { Route, Router } from 'react-router';
 import { AppLayout } from './app.layout';
 import { default as history } from './history';
 import { default as Home } from './home';
+import { Dashboard } from './dashboard';
 import { default as store } from './store';
 
 const HomeComponent = () => (<Home />);
+const DashboardComponent = () => (<Dashboard />);
 
 export class AppRouter extends React.PureComponent {
   public render() {
@@ -15,6 +17,7 @@ export class AppRouter extends React.PureComponent {
         <Router history={history}>
           <AppLayout>
             <Route path="/" exact={true} render={HomeComponent} />
+            <Route path="/dashboard" render={DashboardComponent} />
           </AppLayout>
         </Router>
       </Provider>
