@@ -1,7 +1,18 @@
 import * as React from 'react';
+import { Container, Content, SideBar, Header, Main } from './dashboard.styles';
 
 export const DashboardLayout = () => (
-  <div>
-    <h1>Dashboard</h1>
-  </div>
+  <Container>
+    <SideBar>
+      SideBar
+    </SideBar>
+    <Content>
+      <Header>
+        Dashboard
+      </Header>
+      <Main>
+        Main
+      </Main>
+    </Content>
+  </Container>
 );
