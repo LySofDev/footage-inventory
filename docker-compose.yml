@@ -25,6 +25,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4321:4321"
+      - "9876:9876"
     volumes:
       - ./dashboard-client-v2:/dashboard-client
     environment:
