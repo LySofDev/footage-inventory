@@ -5,56 +5,58 @@ services:
 ################################################################################
 # Dashboard Client e2e tests
 ################################################################################
-  # dashboard-client-e2e:
-  #   build:
-  #     context: ./dashboard-client-v1
-  #     dockerfile: Dockerfile.e2e
-  #   volumes:
-  #     - ./dashboard-client-v1:/dashboard-client-e2e
-  #   environment:
-  #     CYPRESS_TARGET_HOST: localhost
-  #     CYPRESS_TARGET_PORT: 4321
+  dashboard-client-e2e:
+    build:
+      context: ./dashboard-client-v1
+      dockerfile: Dockerfile.e2e
+    volumes:
+      - ./dashboard-client-v1:/dashboard-client-e2e
+    environment:
+      CYPRESS_TARGET_HOST: dashboard-client
+      CYPRESS_TARGET_PORT: "4321"
+    depends_on:
+      - dashboard-client
 ################################################################################
 # Dashboard Client
 ################################################################################
-  # dashboard-client:
-  #   build:
-  #     context: ./dashboard-client-v1
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "4321:4321"
-  #   volumes:
-  #     - ./dashboard-client-v1:/dashboard-client
-  #   environment:
-  #     PORT: "4321"
-      # command: yarn start
+  dashboard-client:
+    build:
+      context: ./dashboard-client-v2
+      dockerfile: Dockerfile
+    ports:
+      - "4321:4321"
+    volumes:
+      - ./dashboard-client-v2:/dashboard-client
+    environment:
+      PORT: "4321"
+    command: npm run start
 ################################################################################
 # Footage Catalogue API
 ################################################################################
-  footage-api:
-    build:
-      context: ./footage-api-v1
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./footage-api-v1:/footage-api
-      - type: tmpfs
-        target: /project/tmp/pids
-    depends_on:
-      - footage-db
-    environment:
-      DB_HOST: footage-db
-      DB_PORT: 5432
-      DB_USER: postgres
-      DB_PASSWORD: password
+  # footage-api:
+  #   build:
+  #     context: ./footage-api-v1
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./footage-api-v1:/footage-api
+  #     - type: tmpfs
+  #       target: /project/tmp/pids
+  #   depends_on:
+  #     - footage-db
+  #   environment:
+  #     DB_HOST: footage-db
+  #     DB_PORT: 5432
+  #     DB_USER: postgres
+  #     DB_PASSWORD: password
 ################################################################################
 # Footage Catalogue Database
 ################################################################################
-  footage-db:
-    image: postgres
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
-    environment:
-      user: postgresql
-      password: password
+  # footage-db:
+  #   image: postgres
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   environment:
+  #     user: postgresql
+  #     password: password
