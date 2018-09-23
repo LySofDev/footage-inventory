@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_174018) do
+ActiveRecord::Schema.define(version: 2018_09_23_174545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clips", force: :cascade do |t|
+    t.string "identifier"
+    t.float "startTime"
+    t.float "endTime"
+    t.bigint "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["video_id"], name: "index_clips_on_video_id"
+  end
 
   create_table "videos", force: :cascade do |t|
     t.string "identifier"
@@ -24,4 +34,5 @@ ActiveRecord::Schema.define(version: 2018_09_23_174018) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "clips", "videos"
 end
