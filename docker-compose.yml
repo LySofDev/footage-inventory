@@ -1,4 +1,6 @@
 version: '3.2'
+volumes:
+    postgres-data:
 services:
 ################################################################################
 # Dashboard Client e2e tests
@@ -15,14 +17,44 @@ services:
 ################################################################################
 # Dashboard Client
 ################################################################################
-  dashboard-client:
+  # dashboard-client:
+  #   build:
+  #     context: ./dashboard-client-v1
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "4321:4321"
+  #   volumes:
+  #     - ./dashboard-client-v1:/dashboard-client
+  #   environment:
+  #     PORT: "4321"
+      # command: yarn start
+################################################################################
+# Footage Catalogue API
+################################################################################
+  footage-api:
     build:
-      context: ./dashboard-client-v1
+      context: ./footage-api-v1
       dockerfile: Dockerfile
     ports:
-      - "4321:4321"
+      - "3000:3000"
     volumes:
-      - ./dashboard-client-v1:/dashboard-client
+      - ./footage-api-v1:/footage-api
+      - type: tmpfs
+        target: /project/tmp/pids
+    depends_on:
+      - footage-db
     environment:
-      PORT: "4321"
-    # command: yarn start
+      DB_HOST: footage-db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: password
+################################################################################
+# Footage Catalogue Database
+################################################################################
+  footage-db:
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      user: postgresql
+      password: password
