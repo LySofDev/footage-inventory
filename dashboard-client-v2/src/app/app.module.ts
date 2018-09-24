@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RoutingModule } from './routing.module';
 import { VideosModule } from './videos/videos.module';
 import { HeaderModule } from './header/header.module';
+import { ClipsModule } from './clips/clips.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HeaderModule } from './header/header.module';
     BrowserModule,
     RoutingModule,
     VideosModule,
-    HeaderModule
+    HeaderModule,
+    ClipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
