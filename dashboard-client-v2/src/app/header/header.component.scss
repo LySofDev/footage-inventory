@@ -1,0 +1,16 @@
+@import "../../styles";
+
+header {
+  background-color: $primary;
+  @include box-shadow(2);
+  width: 100vw;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  color: black;
+  font-size: 1.5em;
+  font-weight: 500;
+}

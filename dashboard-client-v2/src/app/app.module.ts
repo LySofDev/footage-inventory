@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing.module';
 import { VideosModule } from './videos/videos.module';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { VideosModule } from './videos/videos.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    VideosModule
+    VideosModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
