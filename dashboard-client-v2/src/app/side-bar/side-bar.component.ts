@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { SideBarService } from './side-bar.service';
 
 @Component({
   selector: 'fi-side-bar',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  constructor() { }
+  isOpen: boolean;
+
+  constructor(
+    private sideBarService: SideBarService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.sideBarService.getIsOpen().subscribe( ( isOpen: boolean ) => {
+      this.isOpen = isOpen;
+    } );
+  }
+
+  goTo( endpoint: string ) {
+    if ( this.isOpen ) {
+      this.sideBarService.close();
+    }
+    this.router.navigate( [endpoint] );
   }
 
 }
