@@ -7,6 +7,7 @@ import { ClipsComponent } from './clips/clips.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
+  { path: 'clips', component: ClipsComponent },
   { path: 'videos', component: VideosComponent, children: [
     { path: ':id/clips', component: ClipsComponent }
   ] },

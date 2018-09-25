@@ -3,10 +3,10 @@
 header {
   background-color: $primary;
   @include box-shadow(2);
-  width: 100vw;
   padding: 1rem 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .brand {

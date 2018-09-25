@@ -7,6 +7,7 @@ import { VideosModule } from './videos/videos.module';
 import { HeaderModule } from './header/header.module';
 import { ClipsModule } from './clips/clips.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { SideBarModule } from './side-bar/side-bar.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
     VideosModule,
     HeaderModule,
     ClipsModule,
-    DashboardModule
+    DashboardModule,
+    SideBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
