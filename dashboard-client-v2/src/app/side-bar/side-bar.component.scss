@@ -1,0 +1,20 @@
+@import "../../styles";
+
+aside {
+  height: 100%;
+  background: $primary;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 20vw;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid $background;
+  @include box-shadow(2);
+
+  @media(min-width: $desktop) {
+    position: relative;
+    height: 100%;
+    width: 15vw;
+  }
+}
