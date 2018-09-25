@@ -1,12 +1,14 @@
 <aside [ngClass]="{ 'show': isOpen }">
   <nav>
-    <a class="nav-link" (click)="goTo('videos')">
-      <i class="material-icons">insert_drive_file</i>
-      <span>Videos</span>
-    </a>
-    <a class="nav-link" (click)="goTo('clips')">
-      <i class="material-icons">image</i>
-      <span>Clips</span>
-    </a>
+    <fi-side-bar-link
+      [endpoint]="'videos'"
+      [label]="'Videos'"
+      [icon]="'insert_drive_file'">
+    </fi-side-bar-link>
+    <fi-side-bar-link
+      [endpoint]="'clips'"
+      [label]="'Clips'"
+      [icon]="'image'">
+    </fi-side-bar-link>
   </nav>
 </aside>

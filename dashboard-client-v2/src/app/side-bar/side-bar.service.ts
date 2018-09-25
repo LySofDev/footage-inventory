@@ -9,7 +9,7 @@ export class SideBarService {
   private isOpen: BehaviorSubject<boolean>;
 
   constructor() {
-    this.isOpen = new BehaviorSubject<boolean>( false );
+    this.isOpen = new BehaviorSubject<boolean>( true );
   }
 
   getIsOpen(): Observable<boolean> {

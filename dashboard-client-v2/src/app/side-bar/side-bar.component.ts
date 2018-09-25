@@ -23,11 +23,4 @@ export class SideBarComponent implements OnInit {
     } );
   }
 
-  goTo( endpoint: string ) {
-    if ( this.isOpen ) {
-      this.sideBarService.close();
-    }
-    this.router.navigate( [endpoint] );
-  }
-
 }
